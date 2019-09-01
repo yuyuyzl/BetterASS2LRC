@@ -28,6 +28,11 @@ function parseASS(){
 
 }
 
+function saveLrc(){
+    var blob = new Blob([$("#lrc").val()], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, "converted.lrc");
+}
+
 $(function () {
     $("#assInput").change(function () {
         console.log("changed");
@@ -37,6 +42,7 @@ $(function () {
         reader.onload = function(evt) { //读取完文件之后会回来这里
             var fileString = evt.target.result; // 读取文件内容
             $("#ass").val(fileString);
+            parseASS();
         }
     });
 });
