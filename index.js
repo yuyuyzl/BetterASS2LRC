@@ -20,9 +20,9 @@ function parseASS(){
         var splitted=timehmsf.split(":");
         return ""+(parseInt(splitted[0])*60+parseInt(splitted[1]))+":"+splitted[2];
     }
-    var lrcStr="[0:00.00] \n";
+    var lrcStr="[0:00.00]-DELETE THIS-\n";
     for(var i=0;i<lineObjs.length;i++){
-        lrcStr+="["+parseTime(lineObjs[i]["Start"])+"]"+lineObjs[i]["Text"]+"\n["+parseTime(lineObjs[i]["End"])+"]"+" "+"\n";
+        lrcStr+="["+parseTime(lineObjs[i]["Start"])+"]"+lineObjs[i]["Text"]+"\n["+parseTime(lineObjs[i]["End"])+"]"+"-DELETE THIS-"+"\n";
     }
     $("#lrc").val(lrcStr);
 
